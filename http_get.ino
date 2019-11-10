@@ -49,7 +49,7 @@ void readHTTPRequest()
   delay(2000); 
  ShowSerialData();
 
-   SIM800.print("AT+HTTPPARA=\"URL\",\"https://faree.rapando");// setting the httppara, the second parameter is the website you want to access
+   SIM800.print("AT+HTTPPARA=\"URL\",\"https://faree.rapando.co.ke");// setting the httppara, the second parameter is the website you want to access
     
   SIM800.println("\"");
   delay(1000);
