@@ -6,8 +6,6 @@ void setup(){
     SIM800.begin(9600);
     Serial.begin(9600);
     readHTTPRequest();
-    
-  
 }
 
 void loop()
@@ -15,10 +13,7 @@ void loop()
   SIM800.println("AT+CSPN?");
   delay(100);
   readHTTPRequest();
-  
-  
-}
-
+  }
 
 void readHTTPRequest()
 {
@@ -52,10 +47,10 @@ void readHTTPRequest()
   SIM800.println("AT+HTTPINIT"); //init the HTTP request
  
   delay(2000); 
- // ShowSerialData();
+ ShowSerialData();
 
-   SIM800.print("AT+HTTPPARA=\"URL\",\"https://api.thingspeak.com/channels/904744/fields/1.json?api_key=T0SRJC33VDOYDPYM&results=2");// setting the httppara, the second parameter is the website you want to access
-//  SIM800.print(acc_no);
+   SIM800.print("AT+HTTPPARA=\"URL\",\"https://faree.rapando");// setting the httppara, the second parameter is the website you want to access
+    
   SIM800.println("\"");
   delay(1000);
   
@@ -66,13 +61,12 @@ void readHTTPRequest()
  
   SIM800.println("AT+HTTPACTION=0");//submit the request 
   delay(5000);//the delay is very important, the delay time is base on the return from the website, if the return datas are very large, the time required longer.
-  //while(!SIM900.available());
+  while(!SIM800.available());
  
   ShowSerialData();
  
   SIM800.println("AT+HTTPREAD");// read the data from the website you access
   delay(300);
-  //changeLed();
   ShowSerialData();
  
   SIM800.println("");
