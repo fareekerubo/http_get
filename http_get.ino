@@ -12,7 +12,6 @@ void loop()
 {
   SIM800.println("AT+CSPN?");
   delay(100);
-  readHTTPRequest();
   }
 
 void readHTTPRequest()
