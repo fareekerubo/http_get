@@ -5,10 +5,11 @@ SoftwareSerial SIM800(7,5); // RX, TX
 void setup(){
     SIM800.begin(9600);
     Serial.begin(9600);
-    readHTTPRequest();
+    
 }
 
-void loop()
+void loop(){
+    readHTTPRequest();
 {
   SIM800.println("AT+CSPN?");
   delay(100);
